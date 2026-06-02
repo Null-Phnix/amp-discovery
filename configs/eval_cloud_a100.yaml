@@ -1,0 +1,4 @@
+model_name: "facebook/esm2_t33_650M_UR50D"
+adapter_path: "outputs/cloud_a100"
+output_dir: "outputs/evals/cloud_a100"
+
