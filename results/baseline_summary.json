@@ -1,0 +1,11 @@
+{
+  "accuracy": 0.0,
+  "f1_micro": 0.03313411427205355,
+  "f1_macro": 0.028099985408595683,
+  "hamming": 0.7825851393188854,
+  "num_samples": 12920,
+  "f1_Antibacterial": 0.0684931506849315,
+  "f1_Antifungal": 0.03662335688777449,
+  "f1_Antiviral": 0.007283434061676739,
+  "f1_Antiparasitic": 0.0
+}
