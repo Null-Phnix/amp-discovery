@@ -36,3 +36,14 @@ uv run python -m amp_discovery.eval configs/eval_cloud_a100.yaml
 3. Validate on GenPept (cross-benchmark, leakage-free)
 4. Screen NCBI NR for novel AMP candidates
 5. Contact wet-lab for validation, co-author on publication
+
+## Current Results
+
+Baseline (ESM-2 8M, untrained) vs Trained (ESM-2 650M + LoRA, 10 epochs, RunPod A6000):
+
+- Accuracy: 0.0% -> 97.0%
+- F1 Micro: 3.3% -> 68.9% (21x)
+- F1 Antibacterial: 6.8% -> 81.0%
+- F1 Antifungal: 3.7% -> 40.5%
+- F1 Antiviral: 0.7% -> 31.0%
+- F1 Antiparasitic: 0.0% -> 0.0% (class imbalance)
