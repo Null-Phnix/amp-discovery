@@ -41,7 +41,7 @@ The ESCAPE-trained model scored 2.2% F1 on GenPept — essentially random. The m
 
 ### Experiment 3: GenPept Direct Training
 
-Training directly on GenPept as a binary classification task (11K sequences, 80/20 split, 5 epochs) achieved 87.5% F1 with 85.8% accuracy.
+Training directly on GenPept as a binary classification task (11K sequences, 80/20 split, 5 epochs) achieved 88.3% F1 with 86.8% accuracy.
 
 ### Discovery: NCBI Screening
 
@@ -55,7 +55,7 @@ The GenPept-trained model screened 1,980 unlabeled bacterial peptide sequences f
 
 1. **ESM-2 + LoRA is highly sample-efficient.** 80K peptides with a 650M parameter model achieves strong performance without full fine-tuning.
 2. **Cross-benchmark transfer fails.** ESCAPE-trained models do not generalize to GenPept, confirming the need for diverse, leakage-aware evaluation.
-3. **Binary AMP detection is viable. 87.5% F1 on a balanced, leakage-free benchmark means the model can reliably distinguish AMPs from non-AMPs.**
+3. **Binary AMP detection is viable. 88.3% F1 on a balanced, leakage-free benchmark means the model can reliably distinguish AMPs from non-AMPs.**
 
 ## Reproducibility
 
@@ -71,3 +71,12 @@ If you use this work, please cite the datasets:
 ## License
 
 MIT
+
+## Model
+
+Trained LoRA adapter available on HuggingFace: [null-phnix/amp-genpept-esm2-650m-lora](https://huggingface.co/null-phnix/amp-genpept-esm2-650m-lora)
+
+```python
+from peft import PeftModel
+model = PeftModel.from_pretrained(base_model, "null-phnix/amp-genpept-esm2-650m-lora")
+```
